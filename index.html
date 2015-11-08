@@ -6,13 +6,15 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/casinoWarController.js"></script>
   </head>
-  <body div ng-controller='casino as casinoWarCtrl'>
-    <input type="text" name="email" placeholder="Email">
-    <input type="text" name="password" placeholder="Password">
-    <input type="text" name="password_confirmation" placeholder="Confirm password">
-    <button class="button button-block button-positive" ng-click="casino.userSignUp(email, password, password_confirmation)" id="signUp">
-      Submit
+  <body div ng-controller='casinoController as casino'>
+    <input type="text" ng-model="email" placeholder="Email">
+    <input type="text" ng-model="password" placeholder="Password">
+    <input type="text" ng-model="password_confirmation" placeholder="Confirm password">
+    <button class="button" ng-click="casino.get">
+      Get
     </button>
+    {{casino.email}}
   </body>
 </html>

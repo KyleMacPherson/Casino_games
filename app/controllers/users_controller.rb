@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def index
+    render json: User.all
+  end
+
   def create
     hash = JSON.parse(request.body.read)
     user = User.new(email:(hash["email"]), password:(hash["password"]), password_confirmation:(hash['password_confirmation']))
@@ -11,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user.permit(:email, :password, :password_confirmation)
+    params.require(:user.permit(:email, :password, :password_confirmation))
   end
 
 end
